@@ -78,6 +78,9 @@ function createLocalList(masterListId, done){
 		if(err){
 			console.log(err);
 		}  
+		if(!results || results.length <= 0){
+			return [];
+		}
 		var masterList = results[0];
 		console.log(masterList + "-------");
 		var listItems = createLocalListItems(masterList.todos);

@@ -17,16 +17,16 @@ app.get('/all', function( req, res){
 	});
 })
 
-/*app.get('/', function(req, res) {
-	var title = "Test master list";
-	var todoItemDescriptions = ("Do stuff, do more stuff, do many things").split(',');
-	
+app.post('/new', function(req, res) {
+	var title = req.body.title;
+	var tasks = req.body.tasks.split(',');
+		
 	var todos = [];
-	for(var i = 0; i < todoItemDescriptions.length; i++ ){
-		var masterListItem = new MasterListItem({
-			description: todoItemDescriptions[i],
-			users: []
-		});
+	for(var i = 0; i < tasks.length; i++ ){
+		var masterListItem = {
+			description: tasks[i],
+			doneUsers: []
+		};
 		todos.push(masterListItem);
 	}
 	var masterList = new MasterList({title: title, todos: todos });
@@ -37,7 +37,7 @@ app.get('/all', function( req, res){
 		res.send('success');
 	}
 	});
-});*/
+});
 
 	
 //subscribes user to list

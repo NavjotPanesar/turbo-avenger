@@ -28,7 +28,7 @@ app.get('/lists', function(req, res) {
 
 app.get('/leaderboard', function(req, res){
 	ensureAuthenticated(req, res, function(user){
-		User.find({}, '-lists -_id').sort({'points': -1}).exec(function(err,results) {
+		User.find({}, '-lists -_id').sort({'points': -1}).limit(10).exec(function(err,results) {
 			if(err)
 					console.log(err);
 			res.json(results);

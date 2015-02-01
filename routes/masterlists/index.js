@@ -40,9 +40,9 @@ app.get('/all', function( req, res){
 });*/
 
 	
-//should be post
-app.get('/:id', function(req, res) {
-	var masterListId = req.params.id;
+//subscribes user to list
+app.post('/subscribe', function(req, res) {
+	var masterListId = req.body.id;
     ensureAuthenticated(req, res, function(user){
 		
 	User.count({_id: user._id, 'lists.associatedMasterList': masterListId},function(err, count){

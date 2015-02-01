@@ -5,7 +5,7 @@ var app = angular.module('todoList', [])
 	$scope.sendPost = function(){
 		var stuff = $scope.words;
 		console.log(stuff);
-		$http.post('/masterlists/done',  { 'test' : stuff }).success(function(){
+		$http.post('/masterlists/subscribe',  { 'id' : stuff }).success(function(){
 			console.log("success");
 		}).error(function(){
 			console.log("error");

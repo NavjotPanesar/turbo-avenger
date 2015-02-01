@@ -1,23 +1,18 @@
 ---
-layout: default
+title: Turbo Avenger
 ---
 
-<div class="home">
+<!DOCTYPE html>
+<html>
 
-  <h1 class="page-heading">Posts</h1>
+    {% include head.html %}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <body>
+      <div class="main-back">
+        <div class="main-content">
+          <p class="main-title">{{ site.title }}</p>
+        </div>
+      </div>
+    </body>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+  </html>

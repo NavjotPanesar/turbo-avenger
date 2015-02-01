@@ -3,6 +3,7 @@
  */
  body {
     background-color: #EEE;
+    font-family: 'News Cycle', sans-serif;
  }
 
 /*
@@ -14,7 +15,7 @@
 
     .site-title {
         color: #FF9912;
-        font-family: 'Lobster', cursive;
+        font-family: 'Lobster', cursive !important;
         font-size: 30px;
 
         &:hover, &:active, &:visited, &:link {
@@ -24,6 +25,7 @@
 
     .nav-links {
         color: #FF8C00;
+        font-family: 'News Cycle', sans-serif;
 
         a {    
             &:active, &:visited, &:link {
@@ -38,9 +40,42 @@
    
  }
 
+ /*
+ * Main
+ */
+.main-back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+    background-image: url('/images/background.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.main-title {
+    position: absolute;
+    color: #FFF;
+    font-family: 'Lobster', cursive !important;
+    font-size: 60px;
+    left: 50%;
+    right: -50%;
+    top: 40%;
+}
+
 /*
  * Cards
  */
+
+ .page-title {
+    margin-top: -10px;
+    margin-bottom: 15px;
+ }
 
  .quest-card {
     background-color: #FFF;
@@ -51,6 +86,7 @@
     
     .inner {
         padding: 20px;
+        position: relative;
 
         h2 {
             margin-top: 0px;
@@ -77,25 +113,89 @@
     }
  }
 
- .subtext {
-    color: #AAA;
- }
-
  .badge-icon-main {
     img {
         width: 70px;
-        margin-right: 20px;
+        margin-right: 5px;
         position: absolute;
         display: block;
         right: 0;
     }
 }
 
-.div-link {
-    position: absolute; 
+.qpage-card {
+    background-color: #FFF;
+    box-shadow: 0px 0px 8px #CCC;
+    min-height: 100px;
+    margin-bottom: 15px;
+    position: relative;
+
+    .inner {
+        h3 {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+        }
+    }
+
+    
+    .challenge-entry {
+        padding: 20px;
+        position: relative;
+
+        h2 {
+            margin-top: 0px;
+        }
+
+        p {
+            margin-top: -5px;
+            margin-bottom: -10px;
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 8px #999;
+        }
+    }
+ }
+
+ /*
+ * Helpers
+ */
+
+ .subtext {
+    font-size: 14px;
+    color: #AAA;
+ }
+
+ .late {
+    background-color: #990000;
+    color: #FFF;
+
+    .subtext {
+        color: #FFF;
+    }
+ }
+
+.complete {
+    background-color: #009900;
+    color: #FFF;
+
+    .subtext {
+        color: #FFF;
+    }
+ }
+
+ .div-link {
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

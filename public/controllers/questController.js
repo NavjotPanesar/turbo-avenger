@@ -6,6 +6,11 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
         $.getJSON("/user/", function(result){
             $("#user-name").text(result['name']);
             $("#disp-pic").attr("src",result['imageUrl']);
+            $("#pts").text(result['points']);
+        });
+
+        $.getJSON("/user/lists/", function(result){
+            $scope.quests = result;
         });
     }
 
@@ -15,6 +20,7 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
         var stuff = prompt("Enter the ID of the list to subscribe:");
         if (stuff != null) {
             $http.post('/masterlists/subscribe',  { 'id' : stuff });
+            location.reload();
         }
     }
 

@@ -97,7 +97,8 @@ function createLocalListItems(masterListItems){
 		var masterListItem = masterListItems[i];
 		var localListItem = {
 				description: masterListItem.description,
-				completed: false
+				completed: false,
+				dueDate: masterListItem.dueDate
 		};
 		localListItems.push(localListItem);
 	}

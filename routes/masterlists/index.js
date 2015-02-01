@@ -44,21 +44,34 @@ app.get('/all', function( req, res){
 app.get('/:id', function(req, res) {
 	var masterListId = req.params.id;
     ensureAuthenticated(req, res, function(user){
-		createLocalList(masterListId, function(localList){
-			User.findByIdAndUpdate(
-				user._id,
-				{$push: {lists:localList}},
-				function(err, user) {
-					if(err)
-						console.log(err);
-					else
-						res.send("success");
-				}
-			);
-		});
+		
+	User.count({_id: user._id, 'lists.associatedMasterList': masterListId},function(err, count){
+		if(err){
+			console.log(err);
+		}
+		if(count == 0){
+			createLocalList(masterListId, function(localList){
+				User.findByIdAndUpdate(
+					user._id,
+					{$push: {lists:localList}},
+					function(err, user) {
+						if(err)
+							console.log(err);
+						else
+							res.send("success");
+					}
+				);
+			});
+			} else {
+				res.send("duplicate");
+			}
+	});
+		
+		
 		
 	});
 });
+
 
 function createLocalList(masterListId, done){
 	MasterList.find({_id: masterListId},function(err, results){

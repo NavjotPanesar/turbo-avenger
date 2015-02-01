@@ -29,11 +29,10 @@
 
                 <div class="col-sm-7">
                     <div class="qpage-card">
-                        <div class="inner"><h3>Active Challenges <span class="fa fa-caret-down"></span></h3></div>
+                        <div class="inner"><h3>Active Quests <span class="fa fa-caret-down"></span></h3></div>
 
-                        <div class="challenge-entry">
-                            <h2 class="truncate">ECE 222 #3</h2>
-                            <p class="subtext truncate"><span class="fa fa-bullseye"></span> 0% Defeated • <span class="fa fa-calendar-o"></span> Feb 12 2015 • 100 <span class="fa fa-star"></span> Reward</p>
+                        <div class="challenge-entry" ng-repeat="q in quests">
+                            <h2 class="truncate">{{ q['title'] }}</h2>
                             <a href="#"><span class="div-link"></span></a>
                         </div>
 
@@ -51,7 +50,7 @@
                             <div class="row nopadding">
                                 <div class="col-xs-10 nopadding">
                                     <h3 id="user-name" class="truncate"></h3>
-                                    <p>1234 <span class="fa fa-star"></span> • Noob</p>
+                                    <p><span id="pts"></span> <span class="fa fa-star"></span> • Noob</p>
                                 </div>
                                 <div class="col-xs-2 nopadding">
                                     <span><img id="disp-pic" src="" class="img-circle display-pic" />

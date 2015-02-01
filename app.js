@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //Mongo
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/todolist');
+mongoose.connect(' mongodb://ecemasterrace:douglasharder@ds039421.mongolab.com:39421/todolist');
 
   
 var index = require('./routes/');

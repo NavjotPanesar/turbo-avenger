@@ -107,6 +107,8 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px; }
+  .qpage-card .challenge-subtask {
+    background-color: #BBB; }
   .qpage-card .challenge-entry {
     padding: 20px;
     position: relative; }
@@ -162,8 +164,11 @@ body {
 * Helpers
 */
 .subtext {
-  font-size: 14px;
-  color: #AAA; }
+  font-size: 14px; }
+
+.strikedown {
+  text-decoration: line-through;
+  color: #DDD;}
 
 .late {
   background-color: #990000;

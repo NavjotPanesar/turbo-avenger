@@ -24,4 +24,18 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
         }
     }
 
+    $scope.toggle = function(desc, listId){
+        console.log(listId);
+        console.log(desc)
+        $http.post('/user/toggle', { 
+            'listId': listId,
+            'description': desc
+        }).success(function(){
+            location.reload();
+        }).error(function(){
+            location.reload();
+        });
+            
+    }
+
 }]);

@@ -24,8 +24,8 @@ var app = angular.module('todoList', [])
 	
 	$scope.toggleTest = function(){
 		$http.post('/user/toggle', { 
-			'listId': '54cd53e4920fe934b56073a6',
-			'description': 'do stuff'
+			'listId': $scope.listId,
+			'description': $scope.description
 		}).success(function(){
 			console.log("toggleTest success");
 		}).error(function(){

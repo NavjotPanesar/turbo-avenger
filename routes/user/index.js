@@ -30,6 +30,7 @@ app.post('/toggle', function(req, res){
 	var userID = req.session.user._id;
 	var listId = req.body.listId;
 	var desc = req.body.description;
+	console.log(listId);
 	
 	var query = User.where({_id:userID});
 	query.findOne(function(err, user){

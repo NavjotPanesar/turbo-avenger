@@ -23,7 +23,14 @@
           <button ng-click="submit">make</button>
 		
 				</form>
-					<button ng-click="toggleTest()">toggle</button>
+		
+			<h2> for toggling specific task in a list</h2>
+				<form ng-submit="toggleTest()">
+					<input type="text" placeholder="listId" ng-model="listId"></input>
+					<input type="text" placeholder="task descriptions" ng-model="description"></input>
+					<button ng-click="submit">toggle</button>
+				</form>
+					
       </div>
 
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>

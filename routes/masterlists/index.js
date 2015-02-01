@@ -17,16 +17,16 @@ app.get('/all', function( req, res){
 	});
 })
 
-/*app.get('/', function(req, res) {
-	var title = "Test master list";
-	var todoItemDescriptions = ("Do stuff, do more stuff, do many things").split(',');
-	
+app.post('/new', function(req, res) {
+	var title = req.body.title;
+	var tasks = req.body.tasks.split(',');
+		
 	var todos = [];
-	for(var i = 0; i < todoItemDescriptions.length; i++ ){
-		var masterListItem = new MasterListItem({
-			description: todoItemDescriptions[i],
-			users: []
-		});
+	for(var i = 0; i < tasks.length; i++ ){
+		var masterListItem = {
+			description: tasks[i],
+			doneUsers: []
+		};
 		todos.push(masterListItem);
 	}
 	var masterList = new MasterList({title: title, todos: todos });
@@ -37,12 +37,12 @@ app.get('/all', function( req, res){
 		res.send('success');
 	}
 	});
-});*/
+});
 
 	
-//should be post
-app.get('/:id', function(req, res) {
-	var masterListId = req.params.id;
+//subscribes user to list
+app.post('/subscribe', function(req, res) {
+	var masterListId = req.body.id;
     ensureAuthenticated(req, res, function(user){
 		
 	User.count({_id: user._id, 'lists.associatedMasterList': masterListId},function(err, count){

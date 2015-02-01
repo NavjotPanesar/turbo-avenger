@@ -10,7 +10,11 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 	
 app.get('/', function(req, res) {
-    res.send('auth');
+	if(req.session.user ){
+		res.send('valid');
+	} else {
+		res.send('invalid');
+	}
 });
 
 var GOOGLE_CLIENT_ID = "112960821724-h76qs8lp9veg1bnhoesv082vdbj3tahq.apps.googleusercontent.com";

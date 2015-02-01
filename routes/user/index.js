@@ -39,14 +39,25 @@ app.post('/toggle', function(req, res){
 				if(user.lists[i].associatedMasterList == listId){
 					for(var j = 0; j < user.lists[i].todos.length; j++){
 						if(user.lists[i].todos[j].description == desc){
-							user.lists[i].todos[j].completed = !user.lists[i].todos[j].completed;
+							var newTodoValue = user.lists[i].todos[j].completed = !user.lists[i].todos[j].completed;
 							var dueDate = user.lists[i].todos[j].dueData;
 							var currentDate = new Date();
 							var timeDifference = dueDate > currentDate ?(dueDate - currentDate) : 0;
 							var days = timeDifference/ (1000 * 60 *60 * 24);
 							var oldPoints = (user.points) ? user.points : 0;
-							var newPoints = 1 + (days * 2) + oldPoints;
-							User.update({ _id: userID}, {lists : user.lists, points: newPoints}, function(err, numChanged){
+							var newPoints = 1 + (days * 2);
+							var finalPoints = oldPoints;
+							if(newTodoValue == true){
+								 finalPoints += newPoints;
+							} else {
+								finalPoints -= newPoints;
+								finalPoints = finalPoints > 0 ? finalPoints : 0;
+							}
+							console.log('old ' + oldPoints);
+							console.log('new ' + newPoints);
+
+							
+							User.update({ _id: userID}, {lists : user.lists, points: finalPoints}, function(err, numChanged){
 								if(err)
 									console.log(err);
 								

@@ -6,7 +6,7 @@ var UserSchema = new Schema({
 	_id: String,
 	name: String,
 	imageUrl: String,
-	points: Number,
+	points: {type: Number, default: 0},
 	lists: [{
 		associatedMasterList: String,
 		title: String,

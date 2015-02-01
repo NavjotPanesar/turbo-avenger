@@ -44,7 +44,8 @@ app.post('/toggle', function(req, res){
 							var currentDate = new Date();
 							var timeDifference = dueDate > currentDate ?(dueDate - currentDate) : 0;
 							var days = timeDifference/ (1000 * 60 *60 * 24);
-							var newPoints = 1 + (days * 2);
+							var oldPoints = (user.points) ? user.points : 0;
+							var newPoints = 1 + (days * 2) + oldPoints;
 							User.update({ _id: userID}, {lists : user.lists, points: newPoints}, function(err, numChanged){
 								if(err)
 									console.log(err);

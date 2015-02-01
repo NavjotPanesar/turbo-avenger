@@ -17,6 +17,7 @@
     "serve-favicon": "~2.2.0",
 	"passport": "*",
 	"passport-google-oauth": "*",
-	"express-session": "*"
+	"express-session": "*",
+	"mongoose-findorcreate": "*"
   }
 }

@@ -1,2 +1,25 @@
-Welcome
-Here we use angular to load data from a bunch of apis like /lists and /user
+<!DOCTYPE html>
+<html ng-app="todoList"> 
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+      <div ng-controller="mainController">
+        <form ng-submit="sendPost()">
+          <input type="text"  ng-model="words"></input>
+          <button ng-click="submit">Send Post</button>
+      </div>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+	  <script type="text/javascript" src="..app.js"></script>
+      <script type="text/javascript" src="./controllers/main-controller.js"></script>
+  </body>
+</html>
+
+<!-- https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->

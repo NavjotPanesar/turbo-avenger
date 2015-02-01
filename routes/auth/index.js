@@ -35,13 +35,13 @@ passport.use(new GoogleStrategy({
         passReqToCallback: true
     },
     function(request, accessToken, refreshToken, profile, done) {
-        var user = new User({
-            googleId: profile.id
-        });
-        user.save(function(err, user) {
+		User.findOrCreate({_id: profile.id}, function(err, user, created) {
+		  console.log('new user');
+		  User.findOrCreate({}, function(err, user, created) {
 			request.session.user = user;
 			return done(err, user);
-        });
+		  })
+		});
     }
 ));
 

@@ -1,0 +1,6 @@
+# Site settings
+title: Turbo Avenger
+description: Wreck dem tasks like an RPG yo.
+baseurl: ""
+url: "http://lloydtorres.com/labs/turbo-avenger" # the base hostname & protocol for your site
+markdown: kramdown

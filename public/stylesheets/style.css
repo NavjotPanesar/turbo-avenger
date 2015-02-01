@@ -90,35 +90,11 @@ body {
   .page-title a {
     color: #333333; }
 
-.quest-card {
-  background-color: #FFF;
-  box-shadow: 0px 0px 8px #CCC;
-  min-height: 100px;
-  margin-bottom: 15px;
-  position: relative; }
-  .quest-card .inner {
-    padding: 20px;
-    position: relative; }
-    .quest-card .inner h2 {
-      margin-top: 0px; }
-    .quest-card .inner p {
-      margin-top: -5px;
-      margin-bottom: -10px; }
-  .quest-card:hover {
-    box-shadow: 0px 0px 8px #999; }
-
-.quest-add {
+.qpage-add {
   margin-left: 10px;
   height: 50px; }
-  .quest-add .desc {
+  .qpage-add .desc {
     margin-left: 10px; }
-
-.badge-icon-main img {
-  width: 70px;
-  margin-right: 5px;
-  position: absolute;
-  display: block;
-  right: 0; }
 
 .qpage-card {
   background-color: #FFF;

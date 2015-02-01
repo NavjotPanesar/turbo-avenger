@@ -1,6 +1,7 @@
-var app = angular.module('todoList', [])
+var app = angular.module('todoList', []);
 
-.controller('mainController', ['$scope', '$http', function($scope, $http){
+
+app.controller('mainController', ['$scope', '$http', function($scope, $http){
 	
 	$scope.subscribeUser = function(){
 		var stuff = $scope.words;

@@ -19,7 +19,7 @@ app.use('/masterlists', masterlists);
 /* GET list of api routes */
 app.get('/', function(req, res) {
 	ensureAuthenticated(req, res, function(){
-		res.redirect('/main.html');
+		res.redirect('/quests.html');
 	});
 });
 

@@ -32,8 +32,11 @@
 				</form>
 
 			<h2> for getting leaderboard</h2>
-					<button ng-click="getLeaderBoard()"> leaders</button>
-					
+					<ul>
+          <li ng-repeat="user in leaderboard">
+            {{user.name}}
+          </li>
+        </ul>
       </div>
 
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>

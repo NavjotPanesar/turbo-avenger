@@ -3,6 +3,11 @@ var app = angular.module('todoList', []);
 
 app.controller('mainController', ['$scope', '$http', function($scope, $http){
 	
+	$http.get('/user/leaderboard').success(function(data){
+		console.log(data);
+		$scope.leaderboard = data;		
+	})
+	
 	$scope.subscribeUser = function(){
 		var stuff = $scope.words;
 		console.log(stuff);

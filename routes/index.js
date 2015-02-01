@@ -4,6 +4,9 @@ var app = module.exports = express();
 var auth = require('./auth/');
 app.use('/auth', auth);
 
+var user = require('./user/');
+app.use('/user', user);
+
 var users = require('./users/');
 app.use('/users', users);
 

@@ -4,6 +4,8 @@ var findOrCreate = require('mongoose-findorcreate');
 
 var UserSchema = new Schema({
 	_id: String,
+	name: String,
+	imageUrl: String,
 	lists: [{
 		associatedMasterList: String,
 		title: String,

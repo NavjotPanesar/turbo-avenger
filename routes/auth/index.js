@@ -35,8 +35,15 @@ passport.use(new GoogleStrategy({
         passReqToCallback: true
     },
     function(request, accessToken, refreshToken, profile, done) {
-		User.findOrCreate({_id: profile.id}, function(err, user, created) {
+		User.findOrCreate(
+		{_id: profile.id},
+		{
+			imageUrl: profile._json.picture,
+			name: profile._json.name
+		}, function(err, user, created) {
+			console.log(user);
 			console.log('user auth');
+			console.log(profile._json);
 			request.session.user = user;
 			return done(err, user);
 		});

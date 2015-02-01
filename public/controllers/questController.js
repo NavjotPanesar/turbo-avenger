@@ -2,6 +2,11 @@ var app = angular.module('todoList', []);
 
 app.controller('questController', ['$scope', '$http', function($scope, $http){
 
+    $http.get('/user/leaderboard').success(function(data){
+        console.log(data);
+        $scope.leaderboard = data;      
+    })
+
     $scope.init = function(){
         $.getJSON("/user/", function(result){
             $("#user-name").text(result['name']);

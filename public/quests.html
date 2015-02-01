@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col-xs-2 nopadding">
                                     <span><img id="disp-pic" src="" class="img-circle display-pic" />
-                                    <img src="/images/b1.png" class="display-badge" /></span>
+                                    <img src="/images/b7.png" class="display-badge" /></span>
                                 </div>
                             </div><!-- /row -->
                         </div>
@@ -75,11 +75,9 @@
                             <h3>Weekly Leaderboards <span class="fa fa-caret-down"></span></h3>
 
                             <div class="leaderboard">
-                                <p class="gold">#1 John Smith <span class="points">(10000 <span class="fa fa-star"></span>) <img src="/images/b9.png"/></span></p>
-                                <p class="silver">#2 John Smith <span class="points">(10000 <span class="fa fa-star"></span>) <img src="/images/b8.png"/></span></p>
-                                <p class="bronze">#3 John Smith <span class="points">(10000 <span class="fa fa-star"></span>) <img src="/images/b8.png"/></span></p>
-                                <p>#4 John Smith <span class="points">(10000 <span class="fa fa-star"></span>) <img src="/images/b7.png"/></span></p>
-                                <p>#5 John Smith <span class="points">(10000 <span class="fa fa-star"></span>) <img src="/images/b7.png"/></span></p>
+                                <p ng-repeat="user in leaderboard">
+                                    {{ user.name }} <span class="points">({{ user.points }} <span class="fa fa-star"></span>)</span>
+                                </p>
                             </div>
                         </div>
 

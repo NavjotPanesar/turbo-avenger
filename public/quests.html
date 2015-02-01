@@ -29,7 +29,7 @@
 
                 <div class="col-sm-7">
                     <div class="qpage-card">
-                        <div class="inner"><h3>Active Quests <span class="fa fa-caret-down"></span></h3></div>
+                        <div class="inner"><h3>Active Quests</h3></div>
 
                         <div class="holder" ng-repeat="q in quests">
                             <div class="challenge-entry main-challenge" data-toggle="collapse" data-target="#{{ q['_id']}}">
@@ -72,10 +72,23 @@
                 <div class="col-sm-5">
                     <div class="qpage-card">
                         <div class="inner">
-                            <h3>Weekly Leaderboards <span class="fa fa-caret-down"></span></h3>
+                            <h3>Want to try out Turbo Avenger?</h3>
+
+                            <p>Try adding <strong>54ce2a4a591f580c00ac72d7</strong> to your quests!</p>
+
+                            <p>We'll be adding the ability to create your own quests in the future.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="qpage-card">
+                        <div class="inner">
+                            <h3>Leaderboards</h3>
 
                             <div class="leaderboard">
-                                <p ng-repeat="user in leaderboard">
+                                <p ng-repeat="user in leaderboard|limitTo:10">
                                     {{ user.name }} <span class="points">({{ user.points }} <span class="fa fa-star"></span>)</span>
                                 </p>
                             </div>

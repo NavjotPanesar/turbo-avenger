@@ -10,6 +10,9 @@ app.use('/user', user);
 var users = require('./users/');
 app.use('/users', users);
 
+var logout = require('./logout/');
+app.use('/logout', logout);
+
 var masterlists = require('./masterlists/');
 app.use('/masterlists', masterlists);
 

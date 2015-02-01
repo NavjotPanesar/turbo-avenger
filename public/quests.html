@@ -39,7 +39,7 @@
                             <div id="{{ q['_id'] }}" class="collapse" ng-init="todos = q['todos']">
                                 <div id="{{ t['_id'] }}" class="challenge-entry challenge-subtask" ng-repeat="t in todos" ng-class="{strikedown: t['completed']}">
                                     <h2 class="truncate"><span class="fa fa-square-o" ng-if="t['completed'] == false"></span><span class="fa fa-check-square-o" ng-if="t['completed'] == true"></span> {{ t['description'] }}</h2>
-                                    <p class="subtext truncate"><span class="fa fa-calendar-o"></span> Feb 12 2015 • 100 <span class="fa fa-star"></span></p>
+                                    <p class="subtext truncate"><span class="fa fa-calendar-o"></span> Feb 12 2015 • 1 <span class="fa fa-star"></span></p>
                                     <a ng-href='#here' ng-click="toggle(t['description'], q['associatedMasterList'])"><span class="div-link"></span></a>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                             <div class="row nopadding">
                                 <div class="col-xs-10 nopadding">
                                     <h3 id="user-name" class="truncate"></h3>
-                                    <p><span id="pts"></span> <span class="fa fa-star"></span> • Noob</p>
+                                    <p><span id="pts"></span> <span class="fa fa-star"></span> • Whatta Pro</p>
                                 </div>
                                 <div class="col-xs-2 nopadding">
                                     <span><img id="disp-pic" src="" class="img-circle display-pic" />

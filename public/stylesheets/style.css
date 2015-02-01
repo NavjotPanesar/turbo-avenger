@@ -1,8 +1,219 @@
+/*
+ * Sitewide
+ */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  background-color: #EEE;
+  font-family: 'News Cycle', sans-serif; }
 
-a {
-  color: #00B7FF;
-}
+/*
+ * Header
+ */
+.site-navbar {
+  background-color: #222; }
+  .site-navbar .site-title {
+    color: #FF9912;
+    font-family: 'Lobster', cursive !important;
+    font-size: 30px; }
+    .site-navbar .site-title:hover, .site-navbar .site-title:active, .site-navbar .site-title:visited, .site-navbar .site-title:link {
+      color: #FF8C00; }
+  .site-navbar .nav-links {
+    color: #FF8C00; }
+    .site-navbar .nav-links a {
+      font-family: 'News Cycle', sans-serif; }
+      .site-navbar .nav-links a:active, .site-navbar .nav-links a:visited, .site-navbar .nav-links a:link {
+        color: #FF8C00; }
+      .site-navbar .nav-links a:hover {
+        color: #FFF !important; }
+
+ /*
+* Footer
+*/
+.site-footer {
+  border-top: 2px solid #CCC;
+  margin-top: 10px; }
+  .site-footer .text {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+/*
+* Main
+*/
+.main-back {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  background-image: url("/images/background.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.main-title {
+  color: #FFF;
+  font-family: 'Lobster', cursive !important;
+  font-size: 60px;
+  margin-top: 10%; }
+
+.main-content {
+  color: #FFF;
+  font-size: 25px; }
+
+.login-button {
+  width: 200px;
+  margin-top: 5%; }
+
+.main-footer {
+  padding-bottom: 5px;
+  color: #FFF;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  bottom: 0; }
+  .main-footer .inner {
+    position: relative;
+    left: -50%; }
+
+/*
+ * Cards
+ */
+.page-title {
+  margin-top: -10px;
+  margin-bottom: 15px; }
+  .page-title a {
+    color: #333333; }
+
+.quest-card {
+  background-color: #FFF;
+  box-shadow: 0px 0px 8px #CCC;
+  min-height: 100px;
+  margin-bottom: 15px;
+  position: relative; }
+  .quest-card .inner {
+    padding: 20px;
+    position: relative; }
+    .quest-card .inner h2 {
+      margin-top: 0px; }
+    .quest-card .inner p {
+      margin-top: -5px;
+      margin-bottom: -10px; }
+  .quest-card:hover {
+    box-shadow: 0px 0px 8px #999; }
+
+.quest-add {
+  margin-left: 10px;
+  height: 50px; }
+  .quest-add .desc {
+    margin-left: 10px; }
+
+.badge-icon-main img {
+  width: 70px;
+  margin-right: 5px;
+  position: absolute;
+  display: block;
+  right: 0; }
+
+.qpage-card {
+  background-color: #FFF;
+  box-shadow: 0px 0px 8px #CCC;
+  min-height: 100px;
+  margin-bottom: 15px;
+  position: relative; }
+  .qpage-card .inner {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px; }
+  .qpage-card .challenge-entry {
+    padding: 20px;
+    position: relative; }
+    .qpage-card .challenge-entry h2 {
+      margin-top: 0px; }
+    .qpage-card .challenge-entry p {
+      margin-top: -5px;
+      margin-bottom: -10px; }
+    .qpage-card .challenge-entry:hover {
+      box-shadow: 0px 0px 8px #999; }
+
+.display-pic {
+  position: absolute;
+  display: block;
+  right: 0;
+  height: 80px;
+  border: 2px solid #EEE;
+  margin-right: 15px;
+  margin-top: 5px; }
+
+.display-badge {
+  position: absolute;
+  display: block;
+  right: 0;
+  height: 30px;
+  margin-right: 15px;
+  margin-top: 5px; }
+
+.leaderboard {
+  font-size: 17px; }
+  .leaderboard .gold {
+    font-size: 25px;
+    color: #DAA520; }
+  .leaderboard .silver {
+    font-size: 20px;
+    color: #B5B5B5; }
+  .leaderboard .bronze {
+    font-size: 20px;
+    color: #A67D3D; }
+  .leaderboard .points {
+    font-size: 14px;
+    color: #AAA; }
+  .leaderboard img {
+    height: 17px; }
+
+.victory-pic {
+  height: 40px;
+  border: 2px solid #EEE;
+  margin: 7px;
+  margin-left: -3px; }
+
+/*
+* Helpers
+*/
+.subtext {
+  font-size: 14px;
+  color: #AAA; }
+
+.late {
+  background-color: #990000;
+  color: #FFF; }
+  .late .subtext {
+    color: #FFF; }
+
+.complete {
+  background-color: #009900;
+  color: #FFF; }
+  .complete .subtext {
+    color: #FFF; }
+
+.div-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important; }

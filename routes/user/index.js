@@ -26,6 +26,16 @@ app.get('/lists', function(req, res) {
 	});
 });
 
+app.get('/leaderboard', function(req, res){
+	ensureAuthenticated(req, res, function(user){
+		User.find({}, '-lists -_id').sort({'points': -1}).exec(function(err,results) {
+			if(err)
+					console.log(err);
+			res.json(results);
+		});
+	})
+})
+
 app.post('/toggle', function(req, res){
 	var userID = req.session.user._id;
 	var listId = req.body.listId;

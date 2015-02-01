@@ -45,7 +45,6 @@ app.get('/:id', function(req, res) {
 	var masterListId = req.params.id;
     ensureAuthenticated(req, res, function(user){
 		createLocalList(masterListId, function(localList){
-			console.log(localList + "---------------");
 			User.findByIdAndUpdate(
 				user._id,
 				{$push: {lists:localList}},

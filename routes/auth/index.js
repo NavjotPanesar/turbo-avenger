@@ -36,11 +36,9 @@ passport.use(new GoogleStrategy({
     },
     function(request, accessToken, refreshToken, profile, done) {
 		User.findOrCreate({_id: profile.id}, function(err, user, created) {
-		  console.log('new user');
-		  User.findOrCreate({}, function(err, user, created) {
+			console.log('user auth');
 			request.session.user = user;
 			return done(err, user);
-		  })
 		});
     }
 ));

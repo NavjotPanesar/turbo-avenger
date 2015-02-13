@@ -5,9 +5,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var config = require('./env.json')[process.env.NODE_ENV || 'development'];
 //Mongo
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://ecemasterrace:douglasharder@ds039421.mongolab.com:39421/todolist');
+mongoose.connect(config.MONGO_URI);
 
   
 var index = require('./routes/');

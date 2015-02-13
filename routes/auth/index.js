@@ -1,5 +1,6 @@
 var express = require('express');
 var app = module.exports = express();
+var config = require('../../env.json')[process.env.NODE_ENV || 'development'];
 
 var mongoose = require('mongoose');
 var User = require('../user.model.js');
@@ -16,10 +17,6 @@ app.get('/', function(req, res) {
 		res.send('invalid');
 	}
 });
-
-var GOOGLE_CLIENT_ID = "112960821724-h76qs8lp9veg1bnhoesv082vdbj3tahq.apps.googleusercontent.com";
-var GOOGLE_CLIENT_SECRET = "ppl0nLHkIECsIMO_rpJKR7ET";
-
 passport.serializeUser(function(user, done) {
     done(null, user);
 });
@@ -33,9 +30,9 @@ passport.deserializeUser(function(obj, done) {
 //   credentials (in this case, an accessToken, refreshToken, and Google
 //   profile), and invoke a callback with a user object.
 passport.use(new GoogleStrategy({
-        clientID: GOOGLE_CLIENT_ID,
-        clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: "https://turboavenger.herokuapp.com/auth/google/callback",
+        clientID: config.GOOGLE_CLIENT_ID,
+        clientSecret: config.GOOGLE_CLIENT_SECRET,
+        callbackURL: config.GOOGLE_CALLBACK_URL,
         passReqToCallback: true
     },
     function(request, accessToken, refreshToken, profile, done) {

@@ -36,18 +36,18 @@
                                 <h2 class="truncate">{{ q['title'] }}</h2>
                                 <a href="#"><span class="div-link"></span></a>
                             </div>
-                            <div id="{{ q['_id'] }}" class="collapse" ng-init="todos = q['todos']">
+                            <div id="{{ q['_id'] }}" class="collapse in" ng-init="todos = q['todos']">
                                 <div id="{{ t['_id'] }}" class="challenge-entry challenge-subtask" ng-repeat="t in todos" ng-class="{strikedown: t['completed']}">
                                     <h2 class="truncate"><span class="fa fa-square-o" ng-if="t['completed'] == false"></span><span class="fa fa-check-square-o" ng-if="t['completed'] == true"></span> {{ t['description'] }}</h2>
                                     <p class="subtext truncate"><span class="fa fa-calendar-o"></span> Feb 12 2015 • 1 <span class="fa fa-star"></span></p>
-                                    <a ng-href='#here' ng-click="toggle(t['description'], q['associatedMasterList'])"><span class="div-link"></span></a>
+                                    <a ng-href='#' ng-click="toggle(t['description'], q['associatedMasterList'])"><span class="div-link"></span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="qpage-add">
-                        <a ng-href='#here' ng-click="subscribeList()"><span class="fa fa-plus"></span><span class="desc"><strong>Subscribe to new quest</strong></span></a>
+                        <a ng-href='#' ng-click="subscribeList()"><span class="fa fa-plus"></span><span class="desc"><strong>Subscribe to new quest</strong></span></a>
                     </div>
 
                 </div>

@@ -6,6 +6,13 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
         console.log(data);
         $scope.leaderboard = data;      
     })
+    
+    function getUserLists(callback){
+        $.getJSON("/user/lists/", function(result){
+            $scope.quests = result;
+            typeof callback === 'function' && callback();
+        });
+    }
 
     $scope.init = function(){
         $.getJSON("/user/", function(result){
@@ -13,10 +20,8 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
             $("#disp-pic").attr("src",result['imageUrl']);
             $("#pts").text(result['points']);
         });
-
-        $.getJSON("/user/lists/", function(result){
-            $scope.quests = result;
-        });
+        
+        getUserLists();
     }
 
     $scope.init();
@@ -36,9 +41,13 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
             'listId': listId,
             'description': desc
         }).success(function(){
-            location.reload();
+            getUserLists(function(){
+                $scope.$digest();
+            });
         }).error(function(){
-            location.reload();
+             getUserLists(function(){
+                $scope.$digest();
+            });
         });
             
     }

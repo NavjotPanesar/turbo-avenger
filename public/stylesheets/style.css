@@ -118,6 +118,12 @@ body {
     .qpage-card .challenge-entry h2 {
       line-height: 1.7em;
       margin-top: -20px !important; }
+    .qpage-card .challenge-entry a h2 {
+      color: #333333;
+    }
+    .qpage-card .challenge-entry a:hover {
+      text-decoration: none;
+    }
     .qpage-card .challenge-entry p {
       margin-top: -5px;
       margin-bottom: -10px; }

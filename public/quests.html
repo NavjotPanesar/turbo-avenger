@@ -43,7 +43,14 @@
 
                 <div class="col-sm-7">
                     <div class="qpage-card">
-                        <div class="inner"><h3>Quests</h3></div>
+                        <div class="inner">
+                            <h3>Quests</h3>
+
+                            <div class="qpage-add">
+                                <a id="subscr-quest-first"><span class="fa fa-level-up fa-fw"></span><span class="desc"><strong>Take an existing quest</strong></span></a>
+                                <a id="add-quest"><span class="fa fa-bullhorn fa-fw"></span><span class="desc"><strong>Post a new quest</strong></span></a>
+                            </div>
+                        </div>
 
                         <div class="holder" ng-repeat="q in quests">
                             <div class="challenge-entry main-challenge" >
@@ -58,10 +65,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="qpage-add">
-                        <a  id="subscr-quest-first"><span class="fa fa-level-up"></span><span class="desc"><strong>Take an existing quest</strong></span></a>
                     </div>
 
                 </div>
@@ -106,6 +109,7 @@
                 <div class="col-sm-12">
                     <p class="description">Enter the key of the quest you'd like to take.</p>
                     <input class="subscr-key" type="text" ng-model="subscr_key"></input>
+                    <p id="diag-warning" class="warning"></p>
                     <div class="diag-links">
                         <a href="javascript:void(0)" ng-click="subscribeList()"><span class="fa fa-level-up"></span><span class="desc">Take quest!</span></a>
                         <a href="javascript:void(0)" id="cancel-subscr"><span class="fa fa-close"></span><span class="desc">Close</span></a>

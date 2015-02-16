@@ -27,9 +27,10 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
     $scope.init();
 
     $scope.subscribeList = function(){
-        var stuff = prompt("Enter the ID of the challenge to add:");
-        if (stuff != null) {
-            $http.post('/masterlists/subscribe',  { 'id' : stuff });
+        var key = $scope.subscr_key;
+        console.log(key);
+        if (key != null){
+            $http.post('/masterlists/subscribe',  { 'id' : key });
             location.reload();
         }
     }

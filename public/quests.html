@@ -46,10 +46,9 @@
                         <div class="inner"><h3>Quests</h3></div>
 
                         <div class="holder" ng-repeat="q in quests">
-                            <div class="challenge-entry main-challenge" data-toggle="collapse" data-target="#{{ q['_id']}}">
-                                <h2 class="truncate">{{ q['title'] }}</h2>
+                            <div class="challenge-entry main-challenge" >
+                                <a href="javascript:void(0)"><h2 class="truncate" data-toggle="collapse" data-target="#{{ q['_id']}}">{{ q['title'] }}</h2></a>
                                 <p class="subtext key"><span class="fa fa-key"></span> {{ q['associatedMasterList']}}</p>
-                                <a href="javascript:void(0)"><span class="div-link"></span></a>
                             </div>
                             <div id="{{ q['_id'] }}" class="collapse in" ng-init="todos = q['todos']">
                                 <div id="{{ t['_id'] }}" class="challenge-entry challenge-subtask" ng-repeat="t in todos" ng-class="{strikedown: t['completed']}">

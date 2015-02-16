@@ -30,8 +30,15 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
         var key = $scope.subscr_key;
         console.log(key);
         if (key != null){
-            $http.post('/masterlists/subscribe',  { 'id' : key });
-            location.reload();
+            $http.post('/masterlists/subscribe',  { 'id' : key }).success(function(){
+                location.reload();
+            }).error(function(){
+                $("#diag-warning").text("Something weird happened. Please try again.");
+            })
+            
+        }
+        else {
+            $("#diag-warning").text("You didn't enter anything!");
         }
     }
 

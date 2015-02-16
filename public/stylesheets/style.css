@@ -91,8 +91,10 @@ body {
     color: #333333; }
 
 .qpage-add {
-  margin-left: 10px;
   height: 50px; }
+  .qpage-add a {
+    display: block;
+  }
   .qpage-add .desc {
     margin-left: 10px; }
 
@@ -216,9 +218,13 @@ body {
   margin-left: 10px;
 }
 
-  .dialog .desc {
-    margin-left: 10px;
-  }
+.dialog .desc {
+  margin-left: 10px;
+}
+
+.dialog .warning {
+  color: #CC0000;
+}
 
 /*
 * Helpers

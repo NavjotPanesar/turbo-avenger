@@ -28,7 +28,6 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
 
     $scope.subscribeList = function(){
         var key = $scope.subscr_key;
-        console.log(key);
         if (key != null){
             $http.post('/masterlists/subscribe',  { 'id' : key }).success(function(){
                 location.reload();
@@ -40,6 +39,41 @@ app.controller('questController', ['$scope', '$http', function($scope, $http){
         else {
             $("#diag-warning").text("You didn't enter anything!");
         }
+    }
+
+    $scope.createQuest = function(){
+        var title = $scope.quest_title;
+        var tasks = $scope.quest_tasks;
+        if (title == null && tasks == null) {
+            $("#diag-quest-warning").text("You didn't enter anything!");
+        }
+        else if (title == null) {
+            $("#diag-quest-warning").text("You didn't enter a title!");
+        }
+        else if (tasks == null) {
+            $("#diag-quest-warning").text("You didn't enter any tasks!");
+        }
+        else {
+            tasks = tasks.split("\n");
+            $http.post('/masterlists/new', {'title' : title, 'tasks' : tasks.join()}).success(function(){
+                $.getJSON("/masterlists/all", function(result){
+                    for (var i=0; i < result.length; i++) {
+                        if (result[i]['title'] == title) {
+                            $http.post('/masterlists/subscribe',  { 'id' : result[i]['_id'] }).success(function(){
+                                location.reload();
+                            }).error(function(){
+                                $("#diag-quest-warning").text("Something weird happened. Please try again.");
+                            })
+                        }
+                    }
+                }).error(function(){
+                    $("#diag-quest-warning").text("Something weird happened. Please try again.");
+                })
+            }).error(function(){
+                $("#diag-quest-warning").text("Something weird happened. Please try again.");
+            })
+        }
+
     }
 
     $scope.toggle = function(desc, listId){

@@ -124,6 +124,15 @@ body {
     .qpage-card .challenge-entry a:hover {
       text-decoration: none;
     }
+    .qpage-card .challenge-entry a:link {
+      text-decoration: none;
+    }
+    .qpage-card .challenge-entry a:active {
+      text-decoration: none;
+    }
+    .qpage-card .challenge-entry a:visited {
+      text-decoration: none;
+    }
     .qpage-card .challenge-entry p {
       margin-top: -5px;
       margin-bottom: -10px; }

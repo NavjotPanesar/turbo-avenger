@@ -21,6 +21,20 @@
 
     <body ng-controller="questController">
 
+        <script>
+        $(document).ready(function () {
+            $('#subscr-dialog').hide();
+
+            $('#subscr-quest-first').click(function () {
+                $('#subscr-dialog').fadeIn('fast');
+            });
+
+            $('#cancel-subscr').click(function () {
+                $('#subscr-dialog').fadeOut('fast');     
+            });
+        });
+        </script>
+
         <nav ng-include="'/templates/header.html'"></nav>
 
         <div class="container col-md-offset-2 col-md-8">
@@ -29,12 +43,13 @@
 
                 <div class="col-sm-7">
                     <div class="qpage-card">
-                        <div class="inner"><h3>Active Quests</h3></div>
+                        <div class="inner"><h3>Quests</h3></div>
 
                         <div class="holder" ng-repeat="q in quests">
                             <div class="challenge-entry main-challenge" data-toggle="collapse" data-target="#{{ q['_id']}}">
                                 <h2 class="truncate">{{ q['title'] }}</h2>
-                                <a href="#"><span class="div-link"></span></a>
+                                <p class="subtext key"><span class="fa fa-key"></span> {{ q['associatedMasterList']}}</p>
+                                <a href="javascript:void(0)"><span class="div-link"></span></a>
                             </div>
                             <div id="{{ q['_id'] }}" class="collapse in" ng-init="todos = q['todos']">
                                 <div id="{{ t['_id'] }}" class="challenge-entry challenge-subtask" ng-repeat="t in todos" ng-class="{strikedown: t['completed']}">
@@ -47,7 +62,7 @@
                     </div>
 
                     <div class="qpage-add">
-                        <a ng-href='#' ng-click="subscribeList()"><span class="fa fa-plus"></span><span class="desc"><strong>Subscribe to new quest</strong></span></a>
+                        <a  id="subscr-quest-first"><span class="fa fa-level-up"></span><span class="desc"><strong>Take an existing quest</strong></span></a>
                     </div>
 
                 </div>
@@ -70,17 +85,6 @@
 
                     <div class="qpage-card">
                         <div class="inner">
-                            <h3>Want to try out Turbo Avenger?</h3>
-
-                            <p>Try adding <strong>54ce2a4a591f580c00ac72d7</strong> to your quests!</p>
-
-                            <p>We'll be adding the ability to create your own quests in the future.</p>
-                        </div>
-
-                    </div>
-
-                    <div class="qpage-card">
-                        <div class="inner">
                             <h3>Leaderboards</h3>
 
                             <div class="leaderboard">
@@ -98,6 +102,19 @@
         </div><!-- /container -->
 
         <nav ng-include="'/templates/footer.html'"></nav>
+
+        <div class="dialog" id="subscr-dialog">
+            <div class="container inner col-sm-offset-3 col-sm-6">
+                <div class="col-sm-12">
+                    <p class="description">Enter the key of the quest you'd like to take.</p>
+                    <input class="subscr-key" type="text" ng-model="subscr_key"></input>
+                    <div class="diag-links">
+                        <a href="javascript:void(0)" ng-click="subscribeList()"><span class="fa fa-level-up"></span><span class="desc">Take quest!</span></a>
+                        <a href="javascript:void(0)" id="cancel-subscr"><span class="fa fa-close"></span><span class="desc">Close</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 
   </html>

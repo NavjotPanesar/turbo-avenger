@@ -102,6 +102,9 @@ body {
   min-height: 100px;
   margin-bottom: 15px;
   position: relative; }
+  .qpage-card h3 {
+    margin-top: 15px;
+  }
   .qpage-card .inner {
     position: relative;
     padding-top: 5px;
@@ -113,12 +116,17 @@ body {
     padding: 20px;
     position: relative; }
     .qpage-card .challenge-entry h2 {
-      margin-top: 0px; }
+      line-height: 1.7em;
+      margin-top: -20px !important; }
     .qpage-card .challenge-entry p {
       margin-top: -5px;
       margin-bottom: -10px; }
     .qpage-card .challenge-entry:hover {
       box-shadow: 0px 0px 8px #999; }
+
+.key {
+  color: #AAA;
+}
 
 .display-pic {
   position: absolute;
@@ -139,6 +147,8 @@ body {
 
 .leaderboard {
   font-size: 17px; }
+  .leaderboard h3 {
+    margin-top: 10px; }
   .leaderboard .gold {
     font-size: 25px;
     color: #DAA520; }
@@ -160,11 +170,56 @@ body {
   margin: 7px;
   margin-left: -3px; }
 
+  .dialog {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(170, 170, 170, .5);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  }
+
+  .dialog .inner {
+    position: absolute;
+    top: 30%;
+    background-color: #FFF;
+    height: auto;
+    box-shadow: 0px 0px 8px #333;
+  }
+
+  .dialog .description {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+
+  .dialog .subscr-key {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .dialog .diag-links {
+    font-size: 15px;
+    text-align: right;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+.dialog .diag-links a {
+  margin-left: 10px;
+}
+
+  .dialog .desc {
+    margin-left: 10px;
+  }
+
 /*
 * Helpers
 */
 .subtext {
-  font-size: 14px; }
+  font-size: 14px;
+  margin-top: -10px !important;
+  margin-bottom: -2px !important; }
 
 .strikedown {
   text-decoration: line-through;
@@ -193,7 +248,9 @@ body {
 .truncate {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  line-height: 1.7em;
+  margin-top: 5px; }
 
 .nopadding {
   padding: 0 !important;
